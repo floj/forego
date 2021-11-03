@@ -2,13 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/ddollar/forego/Godeps/_workspace/src/github.com/subosito/gotenv"
 	"os"
 	"path/filepath"
-	"regexp"
-)
 
-var envEntryRegexp = regexp.MustCompile("^([A-Za-z_0-9]+)=(.*)$")
+	"github.com/ddollar/forego/Godeps/_workspace/src/github.com/subosito/gotenv"
+)
 
 type Env map[string]string
 
@@ -72,9 +70,7 @@ func ReadEnv(filename string) (Env, error) {
 }
 
 func (e *Env) asArray() (env []string) {
-	for _, pair := range os.Environ() {
-		env = append(env, pair)
-	}
+	env = append(env, os.Environ()...)
 	for name, val := range *e {
 		env = append(env, fmt.Sprintf("%s=%s", name, val))
 	}
