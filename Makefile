@@ -1,5 +1,5 @@
 BIN = forego
-SRC = $(shell ls *.go)
+SRC = $(find . -mindepth 1 -maxdepth 1 -name '*.go')
 
 .PHONY: all build clean install test lint
 
@@ -10,9 +10,6 @@ build: $(BIN)
 clean:
 	rm -f $(BIN)
 
-install: forego
-	cp $< ${GOPATH}/bin/
-
 lint: $(SRC)
 	go fmt
 
@@ -21,4 +18,4 @@ test: lint build
 	cd eg && ../forego start
 
 $(BIN): $(SRC)
-	godep go build -o $@
+	go build -v -o $@
