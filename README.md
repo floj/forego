@@ -1,29 +1,16 @@
 ## forego
-[![Build Status](https://travis-ci.org/ddollar/forego.svg?branch=master)](https://travis-ci.org/ddollar/forego)
 
-Foreman in Go.
+Foreman in Go. Fork of [ddollar/forego](https://github.com/ddollar/forego) migrated to Go modules and binaries on GitHub.
 
 ### Installation
 
-##### OS X (Homebrew)
-
-    brew install forego
-
 ##### Precompiled Binaries
 
-* Linux
-  [[32-bit](https://godist.herokuapp.com/projects/ddollar/forego/releases/current/linux-386/forego)]
-  [[64-bit](https://godist.herokuapp.com/projects/ddollar/forego/releases/current/linux-amd64/forego)]
-* OS X
-  [[32-bit](https://godist.herokuapp.com/projects/ddollar/forego/releases/current/darwin-386/forego)]
-  [[64-bit](https://godist.herokuapp.com/projects/ddollar/forego/releases/current/darwin-amd64/forego)]
-* Windows
-  [[32-bit](https://godist.herokuapp.com/projects/ddollar/forego/releases/current/windows-386/forego.exe)]
-  [[64-bit](https://godist.herokuapp.com/projects/ddollar/forego/releases/current/windows-amd64/forego.exe)]
+Precompiled Binaries are available in [Releases](https://github.com/floj/tfrs/releases/latest)
 
 ##### Compile from Source
 
-    $ go get -u github.com/ddollar/forego
+    $ go get -u github.com/floj/forego
 
 ### Usage
 
