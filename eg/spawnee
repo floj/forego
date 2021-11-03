@@ -3,12 +3,12 @@
 NAME="$1"
 
 sigterm() {
-  echo "$NAME: got sigterm"
+  printf "%s: got sigterm\n" "$NAME"
 }
 
-#trap sigterm SIGTERM
+trap sigterm TERM
 
 while true; do
-  echo "$NAME: ping $$"
+  printf "%s: ping %s\n" "$NAME" "$$"
   sleep 1
 done

@@ -1,14 +1,17 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env bash
 
-$stdout.sync = true
+ignoreINT() {
+  printf "received SIGINT but i'm ignoring it!\n"
+}
 
-%w( SIGINT SIGTERM ).each do |signal|
-  trap(signal) do
-    puts "received #{signal} but i'm ignoring it!"
-  end
-end
+ignoreTERM() {
+  printf "received SIGTERM but i'm ignoring it!\n"
+}
 
-while true
-  puts "tick: #{ARGV.inspect} -- FOO:#{ENV["FOO"]}"
+trap ignoreINT INT
+trap ignoreTERM TERM
+
+while true; do
+  printf "tick: %s -- FOO:%s\n" "$*" "${FOO:-}"
   sleep 1
-end
+done

@@ -14,7 +14,7 @@ lint: $(SRC)
 	go fmt
 
 test: lint build
-	go test ./... -cover
+	go test ./...
 	cd eg && ../forego start
 
 $(BIN): $(SRC)

@@ -1,7 +1,5 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env bash
 
-$stdout.sync = true
-
-puts "will error in 10s"
+printf "will error in 5s\n"
 sleep 5
-raise "Dying"
+exit 1
